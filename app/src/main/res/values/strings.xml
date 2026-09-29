@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">UnzipGit</string>
+    <string name="drawer_made_in">Made in Ukraine</string>
+    <string name="drawer_developer">Developer: 彡ҜÃƦÃT彡ᡕᠵデ气亠</string>
+    <string name="navigation_drawer_open">Открыть меню</string>
+    <string name="navigation_drawer_close">Закрыть меню</string>
+    <string name="menu_home">Главная</string>
+    <string name="menu_repos">Репозитории</string>
+    <string name="menu_unzip">Распаковка ZIP</string>
+    <string name="menu_releases">Релизы</string>
+    <string name="menu_tokens">Токены и ключи</string>
+    <string name="menu_other">Ещё</string>
+    <string name="bottom_repos">Репозитории</string>
+    <string name="bottom_unzip">Распаковка</string>
+    <string name="bottom_files">Файлы</string>
+    <string name="bottom_releases">Релизы</string>
+    <string name="bottom_tokens">Токены</string>
+    <string name="repos_title">Репозитории</string>
+    <string name="unzip_title">Распаковка ZIP</string>
+    <string name="releases_title">Релизы</string>
+    <string name="tokens_title">Токены и ключи</string>
+    <string name="nav_no_repo">Репозиторий не выбран</string>
+    <string name="file_saved">Файл сохранён</string>
+    <string name="file_save_error">Не удалось сохранить файл</string>
+    <string name="file_save_unavailable">Не удалось открыть выбор места сохранения</string>
+    <string name="menu_files">Файлы репозитория</string>
+    <string name="files_title">Файлы</string>
+    <string name="menu_about">О приложении</string>
+    <string name="about_text">Распаковка ZIP-архивов прямо в GitHub-репозиторий.
+Все действия выполняются на стороне клиента (GitHub API + JSZip).
+Раздел «Репозитории» — список, создание и удаление репозиториев. «Релизы» — создание релизов GitHub и загрузка файлов любого формата. «Файлы репозитория» — двухпанельный файловый менеджер и редактор кода; каждое изменение автоматически сохраняется коммитом. «Токены и ключи» — хранение токенов доступа и SSH-ключей.</string>
+    <string name="no_internet">Нет подключения к интернету</string>
+    <string name="refresh">Обновить</string>
+    <string name="about_title">О приложении</string>
+    <string name="ok">OK</string>
+    <string name="load_error">Ошибка загрузки: %1$s</string>
+    <string name="file_chooser_error">Не удалось открыть выбор файла</string>
+    <string name="no_browser">Не найдено приложение для открытия ссылки</string>
+    <string name="webview_crashed">Страница была перезагружена</string>
+    <string name="busy_message">Идёт операция (распаковка или загрузка файлов). Обновление или уход со страницы прервёт её. Продолжить?</string>
+    <string name="busy_continue">Продолжить</string>
+    <string name="busy_cancel">Отмена</string>
+    <string name="unsaved_message">В редакторе есть несохранённые изменения. Уйти с экрана? (Черновик останется на устройстве и предложит восстановиться.)</string>
+    <string name="unsaved_leave">Уйти</string>
+</resources>
