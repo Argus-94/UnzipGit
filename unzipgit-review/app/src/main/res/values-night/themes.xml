@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.UnzipGit" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorPrimaryVariant">@color/accent_primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_primary</item>
+        <item name="colorSurface">@color/card_dark</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorSurfaceContainer">@color/card_dark</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_high</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/border_dark</item>
+        <item name="colorError">@color/error_soft</item>
+        <item name="colorOnError">@color/on_error</item>
+        <item name="android:statusBarColor">@color/card_dark</item>
+        <item name="android:navigationBarColor">@color/card_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.UnzipGit.MaterialAlertDialog</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.UnzipGit.MaterialAlertDialog</item>
+    </style>
+</resources>

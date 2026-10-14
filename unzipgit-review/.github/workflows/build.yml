@@ -1,0 +1,17 @@
+# Alias workflow. Основная сборка: android.yml (Android APK Build).
+name: Android Build (alias)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use android.yml
+        run: |
+          echo "Основной workflow: .github/workflows/android.yml"
+          echo "Этот файл оставлен как алиас (workflow_dispatch), чтобы старые ссылки не ломались."

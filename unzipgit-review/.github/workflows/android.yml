@@ -1,0 +1,70 @@
+name: Android APK Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  js-smoke:
+    name: JS syntax check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check assets/js (except minified)
+        run: |
+          set -e
+          ok=0
+          for f in app/src/main/assets/js/*.js; do
+            base=$(basename "$f")
+            case "$base" in
+              jszip.min.js) continue ;;
+            esac
+            echo "node --check $f"
+            node --check "$f"
+            ok=$((ok+1))
+          done
+          echo "Checked $ok files"
+
+  build:
+    name: Build debug APK
+    needs: js-smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Validate Gradle wrapper
+        run: ./gradlew --version
+
+      - name: Build debug APK
+        run: ./gradlew --no-daemon clean assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnzipGit-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,146 @@
+.actions-toolbar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0 12px; }
+.actions-toolbar .spacer { flex:1; min-width:4px; }
+
+/* Статус Actions для репозитория */
+.actions-status {
+    display:flex; align-items:flex-start; gap:10px;
+    padding:12px 14px; border-radius:14px; margin:0 0 14px;
+    border:1px solid var(--divider); background:var(--card);
+}
+.actions-status .as-dot {
+    width:10px; height:10px; border-radius:50%; margin-top:5px; flex-shrink:0;
+    background:var(--sec);
+}
+.actions-status.on .as-dot { background:var(--success); box-shadow:0 0 0 3px var(--success-bg); }
+.actions-status.off .as-dot { background:var(--danger); box-shadow:0 0 0 3px var(--danger-bg); }
+.actions-status.unknown .as-dot { background:var(--warn); }
+.actions-status .as-body { flex:1; min-width:0; }
+.actions-status .as-title { font-size:14px; font-weight:600; }
+.actions-status .as-sub { font-size:12px; color:var(--sec); margin-top:3px; line-height:1.4; }
+
+.wf-card, .run-card {
+    background:var(--card); border:1px solid var(--divider);
+    border-radius:14px; padding:13px; margin-bottom:9px;
+}
+.wf-title, .run-title { font-size:14px; font-weight:600; overflow-wrap:anywhere; }
+.wf-path, .run-meta { color:var(--sec); font-size:12px; margin-top:5px; overflow-wrap:anywhere; }
+.wf-actions, .run-actions { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; align-items:center; }
+
+.status {
+    display:inline-flex; align-items:center; border-radius:12px;
+    padding:3px 8px; font-size:11px; font-weight:600;
+    background:var(--card3); color:var(--sec); margin-top:7px;
+}
+.status.success { color:var(--success); background:var(--success-bg); }
+.status.failure, .status.cancelled, .status.timed_out, .status.action_required {
+    color:var(--danger); background:var(--danger-bg);
+}
+.status.in_progress, .status.queued, .status.waiting, .status.pending {
+    color:var(--warn); background:var(--warn-bg);
+}
+.status.active { color:var(--success); background:var(--success-bg); }
+.status.disabled, .status.disabled_manually, .status.disabled_inactivity {
+    color:var(--danger); background:var(--danger-bg);
+}
+
+.state-badge {
+    display:inline-flex; align-items:center; border-radius:10px;
+    padding:2px 8px; font-size:11px; font-weight:600; margin-left:6px;
+    vertical-align:middle;
+}
+.state-badge.on { background:var(--success-bg); color:var(--success); }
+.state-badge.off { background:var(--danger-bg); color:var(--danger); }
+
+.small-btn {
+    padding:8px 12px; border-radius:18px; border:1px solid var(--border);
+    background:var(--card3); font-size:12px; font-weight:600;
+}
+.small-btn.primary { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+.small-btn.danger { color:var(--danger); }
+.small-btn.ghost { background:transparent; }
+
+.filter-bar {
+    display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;
+}
+.filter-bar .small-btn { padding:6px 10px; font-size:11px; }
+
+.empty { line-height:1.5; color:var(--sec); padding:8px 2px; }
+.section-hint { font-size:12px; color:var(--sec); margin:-4px 0 10px; line-height:1.4; }
+
+.art-row {
+    display:flex; align-items:center; gap:8px; padding:10px 0;
+    border-bottom:1px solid var(--divider);
+}
+.art-row:last-child { border-bottom:none; }
+.art-info { flex:1; min-width:0; }
+.art-name { font-size:13px; font-weight:600; overflow-wrap:anywhere; }
+.art-meta { font-size:11px; color:var(--sec); margin-top:2px; }
+
+/* ——— YAML editor (полноэкранный в модалке) ——— */
+#modalWrap.ye-open { align-items: stretch; padding: 0; }
+.mcard.ye-mcard {
+    max-width: 100%; width: 100%; max-height: 100%; height: 100%;
+    border-radius: 0; padding: 12px 12px 16px;
+    display: flex; flex-direction: column;
+}
+.ye-mcard h3 { flex: none; }
+.ye-mcard .ye-meta { flex: none; color: var(--sec); font-size: 12.5px; line-height: 1.4; margin: 0 0 8px; white-space: pre-wrap; }
+.ye-mcard .ye-hints {
+    flex: none; background: var(--warn-bg); border: 1px solid var(--warn);
+    border-radius: 10px; padding: 8px 10px; font-size: 12px; color: var(--warn); margin-bottom: 8px;
+    max-height: 88px; overflow: auto; white-space: pre-wrap;
+}
+.ye-mcard .ye-hints.err {
+    background: var(--danger-bg); border-color: var(--danger); color: var(--danger);
+}
+.ye-fields { flex: none; display: flex; gap: 8px; margin-bottom: 8px; }
+.ye-fields .fld { flex: 1; margin: 0; }
+.ye-fields input {
+    width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 12px; font-size: 14px;
+}
+.ye-editor {
+    flex: 1; min-height: 180px; display: flex; border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; background: var(--editor-bg); position: relative;
+}
+.ye-gutter {
+    flex: none; width: 44px; padding: 10px 6px 10px 0; text-align: right;
+    font: 12px/1.45 ui-monospace, Menlo, Consolas, monospace; color: var(--gutter-text);
+    background: var(--gutter-bg); overflow: hidden; user-select: none;
+    border-right: 1px solid var(--border);
+}
+.ye-gutter span { display: block; padding-right: 6px; }
+.ye-gutter span.err {
+    color: var(--err-gutter); background: var(--err-gutter-bg); border-radius: 4px 0 0 4px;
+    font-weight: 700;
+}
+.ye-code { flex: 1; position: relative; min-width: 0; overflow: auto; }
+.ye-hl, .ye-ta {
+    margin: 0; padding: 10px 12px; font: 12px/1.45 ui-monospace, Menlo, Consolas, monospace;
+    white-space: pre; word-wrap: normal; tab-size: 2; border: 0; outline: none;
+    min-height: 100%; width: 100%; box-sizing: border-box;
+}
+.ye-hl {
+    position: absolute; left: 0; top: 0; right: 0; pointer-events: none;
+    color: var(--code-text); overflow: visible;
+}
+.ye-ta {
+    position: relative; z-index: 1; background: transparent; color: transparent;
+    caret-color: var(--accent); resize: none; overflow: auto;
+}
+.ye-hl .err-line {
+    background: var(--err-line-bg);
+    outline: 1px solid var(--err-line-ol);
+}
+.ye-status {
+    flex: none; font-size: 11px; color: var(--sec); margin-top: 6px;
+    display: flex; justify-content: space-between; gap: 8px;
+}
+.ye-mcard .mbtns { flex: none; margin-top: 10px; }
+/* highlight tokens (from files.css subset) */
+.ye-hl .kw { color: var(--tk-k); }
+.ye-hl .str { color: var(--tk-s); }
+.ye-hl .cm { color: var(--tk-c); font-style: italic; }
+.ye-hl .num { color: var(--tk-n); }
+.ye-hl .key { color: var(--tk-g); }
+.ye-hl .lit { color: var(--tk-t); }
